@@ -105,6 +105,15 @@ def search_partners(api_key: str, cse_id: str) -> list[dict]:
 
         try:
             resp = requests.get(CSE_URL, params=params, timeout=15)
+            if not resp.ok:
+                print(f"[WARN] HTTP {resp.status_code} for query '{query}'")
+                try:
+                    err = resp.json()
+                    print(f"       Google error: {err.get('error', {}).get('message', resp.text[:300])}")
+                except Exception:
+                    print(f"       Response body: {resp.text[:300]}")
+                time.sleep(2)
+                continue
             resp.raise_for_status()
             data = resp.json()
         except requests.RequestException as exc:
