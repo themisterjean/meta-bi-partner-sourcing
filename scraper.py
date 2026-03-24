@@ -142,8 +142,8 @@ def search_partners(api_key: str, cse_id: str) -> list[dict]:
 
 
 if __name__ == "__main__":
-    api_key = os.environ["GOOGLE_CSE_API_KEY"]
-    cse_id = os.environ["GOOGLE_CSE_ID"]
+    api_key = os.environ.get("GOOGLE_CSE_API_KEY", "").strip()
+    cse_id = os.environ.get("GOOGLE_CSE_ID", "").strip()
     partners = search_partners(api_key, cse_id)
     for p in partners:
         print(p)
