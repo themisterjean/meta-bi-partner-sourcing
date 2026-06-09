@@ -6,22 +6,26 @@ import requests
 CSE_URL = "https://www.googleapis.com/customsearch/v1"
 
 # Search queries targeting LinkedIn company pages for Microsoft Power BI / Data Analytics partners
+# Updated for 2026 to target "Solutions Partner" & "Data & AI" branding while bypassing strict layout traps.
 QUERIES = [
     # France
-    '"Microsoft Solutions Partner" "Power BI" site:linkedin.com/company France',
-    '"Microsoft Gold Partner" "Data Analytics" site:linkedin.com/company France',
+    '"Solutions Partner" "Data & AI" "Power BI" site:linkedin.com/company France',
+    '"Microsoft Cloud Partner" "Power BI" site:linkedin.com/company France',
     '"Microsoft Partner" "Power Platform" site:linkedin.com/company France',
+    
     # Germany
-    '"Microsoft Solutions Partner" "Power BI" site:linkedin.com/company Deutschland',
-    '"Microsoft Gold Partner" "Data Analytics" site:linkedin.com/company Deutschland',
+    '"Solutions Partner" "Data & AI" "Power BI" site:linkedin.com/company (Deutschland OR Germany)',
+    '"Microsoft Cloud Partner" "Power BI" site:linkedin.com/company (Deutschland OR Germany)',
     '"Microsoft Partner" "Power Platform" site:linkedin.com/company Germany',
+    
     # Austria
-    '"Microsoft Solutions Partner" "Power BI" site:linkedin.com/company Österreich',
-    '"Microsoft Gold Partner" "Data Analytics" site:linkedin.com/company Austria',
+    '"Solutions Partner" "Data & AI" "Power BI" site:linkedin.com/company (Österreich OR Austria)',
+    '"Microsoft Cloud Partner" "Power BI" site:linkedin.com/company (Österreich OR Austria)',
     '"Microsoft Partner" "Power Platform" site:linkedin.com/company Wien',
+    
     # Switzerland
-    '"Microsoft Solutions Partner" "Power BI" site:linkedin.com/company Schweiz',
-    '"Microsoft Gold Partner" "Data Analytics" site:linkedin.com/company Switzerland',
+    '"Solutions Partner" "Data & AI" "Power BI" site:linkedin.com/company (Schweiz OR Suisse OR Switzerland)',
+    '"Microsoft Cloud Partner" "Power BI" site:linkedin.com/company (Schweiz OR Suisse OR Switzerland)',
     '"Microsoft Partner" "Power Platform" site:linkedin.com/company Zurich',
 ]
 
@@ -34,6 +38,7 @@ COUNTRY_HINTS = {
     "austria": "Austria",
     "wien": "Austria",
     "schweiz": "Switzerland",
+    "suisse": "Switzerland",
     "switzerland": "Switzerland",
     "zurich": "Switzerland",
 }
@@ -41,7 +46,7 @@ COUNTRY_HINTS = {
 SPECIALIZATION_HINTS = {
     "power bi": "Power BI",
     "power platform": "Power Platform",
-    "data analytics": "Data Analytics",
+    "data & ai": "Data & AI",
 }
 
 
